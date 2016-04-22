@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    <div class="container">
+        <h3>Examples</h3>
+        <hr/>
+        <table class="table table-bordered table-condensed">
+        <thead>
+        	<tr>
+        		<th>Name</th>
+        		<th>Description</th>
+        	</tr>
+        </thead>
+        <tbody>
+        	<tr>
+        		<td><a href="{% url 'app1-post-list' %}"> Notification on object create</a></td>
+        		<td>Notification will get displayed for all the clients on LIST page whenever object being created/updated</td>
+        	</tr>
+        	<tr>
+        		<td><a href="{% url 'app1-votes' %}">Votes</a></td>
+        		<td>Vote for your favourite flavour of ice cream!</td>
+        	</tr>
+        </tbody>
+        </table>
+    	
+    </div>
+{% endblock %}

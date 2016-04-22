@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block css %}
+<style>
+	.row-centered {
+    text-align:center;
+	}
+	.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+</style>
+{% endblock %}
+
+{% block main_content %}
+	<div class='container'>
+		<h3>Vote for your favourite flavour of ice cream!</h3>
+
+		<div class="row row-centered">
+			{% for vote in votes %}
+    		<div class="col-xs-4 col-md-4 col-centered">
+    			<img src="/static/img/{{vote.item}}.png"/>
+    			<hr/>
+    			<h1><span id="{{vote.item}}" class="label label-default">{{vote.number_of_votes}}</span></h1>
+    			<hr/>
+    			<button name="btnSubmit" value="{{vote.item}}" type="submit" class="btn btn-primary btn-lg">VOTE <i class="glyphicon glyphicon-circle-arrow-up"></i></button>	
+    		</div>
+    		{% endfor %}
+    		
+		</div>
+
+	</div>
+
+{% endblock %}
+
+{% block js %}	
+	<script src="/static/js/votes.js"></script>
+{% endblock %}
